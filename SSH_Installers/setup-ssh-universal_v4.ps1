@@ -136,6 +136,9 @@ function Ensure-KeyPair {
     }
 
     Remove-Item $PrivateKeyPath, $PublicKeyPath -Force -ErrorAction SilentlyContinue
+    # Stelle sicher, dass das Zielverzeichnis existiert
+    $dir = Split-Path $PrivateKeyPath
+    if (-not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir -Force | Out-Null }
     $escapedPrivateKeyPath = $PrivateKeyPath.Replace('"', '""')
     $cmdLine = '"ssh-keygen" -t ed25519 -N "" -f "' + $escapedPrivateKeyPath + '"'
     & cmd.exe /c $cmdLine | Out-Null

