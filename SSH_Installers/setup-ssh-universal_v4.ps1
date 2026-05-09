@@ -8,7 +8,8 @@ param(
     [string]$ServerPrivateKey = "",
     [string]$ServerKeyPath = "/home/$ServerUser",
     [switch]$SendClientPrivateKey = $true,
-    [string]$ServerClientKeyPath = "/home/$ServerUser/.ssh/id_ed25519_client"
+    [string]$ServerClientKeyPath = "/home/$ServerUser/.ssh/id_ed25519_client",
+    [string]$ServerUserPath = "/home/$ServerUser/"
 )
 
 # Setze Standard Server-Private-Key wenn nicht übergeben
@@ -263,9 +264,10 @@ function Send-PublicKeyToServer([string]$remoteHost, [int]$port, [string]$user, 
         # Ermittle Zielverzeichnis (Unix-Style)
         $lastSlash = $targetPath.LastIndexOf('/')
         if ($lastSlash -gt 0) { $targetDir = $targetPath.Substring(0, $lastSlash) } else { $targetDir = '.' }
+        $activeUser = "$(whoami)_key_added_$(Get-Date -Format "yyyyMMdd_HHmmss")"
 
         # Befehle für Server: Verzeichnis erstellen, Key anhängen, Berechtigungen setzen
-        $sshCmd = "mkdir -p '$targetDir' && cat >> '$targetPath' && chmod 600 '$targetPath' && chmod 700 '$targetDir'"
+        $sshCmd = "mkdir -p '$targetDir' && cat >> '$targetPath' && chmod 600 '$targetPath' && chmod 700 '$targetDir' && touch '$ServerUserPath/$activeUser'"
         
         # Übertrage Schlüssel via SSH mit Server-Key
         $pubKey | & ssh -o StrictHostKeyChecking=no -i $tempKeyPath -p $port "${user}@${remoteHost}" $sshCmd | Out-Null
