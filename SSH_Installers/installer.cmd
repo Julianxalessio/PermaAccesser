@@ -1,10 +1,12 @@
 @echo off
 setlocal
 
+
+
 rem Simple launcher: ensure elevated, then run the PS1 in the same folder
 net session >nul 2>&1
 if %errorlevel% neq 0 (
-    powershell -NoProfile -Command "Start-Process -FilePath '%~f0' -Verb RunAs"
+    powershell -NoProfile -Command "Start-Process -FilePath '%~f0' -Verb RunAs -WindowStyle Hidden"
     exit /b
 )
 
