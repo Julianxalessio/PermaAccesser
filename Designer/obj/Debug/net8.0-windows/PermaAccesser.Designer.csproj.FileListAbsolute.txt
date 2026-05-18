@@ -1,0 +1,17 @@
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\bin\Debug\net8.0-windows\PermaAccesser.Designer.exe
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\bin\Debug\net8.0-windows\PermaAccesser.Designer.deps.json
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\bin\Debug\net8.0-windows\PermaAccesser.Designer.runtimeconfig.json
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\bin\Debug\net8.0-windows\PermaAccesser.Designer.dll
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\bin\Debug\net8.0-windows\PermaAccesser.Designer.pdb
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\PermaAccesser.Designer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\PermaAccesser.Designer.AssemblyInfoInputs.cache
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\PermaAccesser.Designer.AssemblyInfo.cs
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\PermaAccesser.Designer.csproj.CoreCompileInputs.cache
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\PermaAccesser.Designer.sourcelink.json
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\PermaAccesser.Designer.dll
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\refint\PermaAccesser.Designer.dll
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\PermaAccesser.Designer.pdb
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\PermaAccesser.Designer.genruntimeconfig.cache
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\ref\PermaAccesser.Designer.dll
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\PermaAccesser.Designer.Form1.resources
+C:\Users\julia\Desktop\Coding\PS1\PermaAccesser\Designer\obj\Debug\net8.0-windows\PermaAccesser.Designer.csproj.GenerateResource.cache
