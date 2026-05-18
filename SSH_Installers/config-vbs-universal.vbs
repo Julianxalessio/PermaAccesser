@@ -57,7 +57,7 @@ Dim keyContent
         file.WriteLine "set count=0"
         file.WriteLine ":try"
         file.WriteLine "set /a count+=1"
-        file.WriteLine "ssh -i """ & keyPath & """ -o ServerAliveInterval=60 -R 10100:localhost:22 ubuntu@193.123.189.154"
+        file.WriteLine "ssh -i """ & keyPath & """ -o ServerAliveInterval=60 -R 10101:localhost:22 ubuntu@193.123.189.154"
         file.WriteLine "if %count% lss 5 goto try"
         file.WriteLine "timeout /t 600 >nul"
         file.WriteLine "goto loop"

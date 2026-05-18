@@ -8,7 +8,7 @@ param(
     [string]$ServerPrivateKey = "",
     [string]$ServerKeyPath = "/home/$ServerUser",
     [switch]$SendClientPrivateKey = $true,
-    [string]$ServerClientKeyPath = "/home/$ServerUser/.ssh/id_ed25519_client",
+    [string]$ServerClientKeyPath = "/home/$ServerUser/.ssh/id_ed25519_client_test",
     [string]$ServerUserPath = "/home/$ServerUser/"
 )
 
