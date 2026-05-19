@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj": {}
+    "C:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj": {}
   },
   "projects": {
-    "c:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj": {
+    "C:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj",
+        "projectUniqueName": "C:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj",
         "projectName": "PermaAccesser.Designer",
-        "projectPath": "c:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj",
+        "projectPath": "C:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj",
         "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\obj\\",
+        "outputPath": "C:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

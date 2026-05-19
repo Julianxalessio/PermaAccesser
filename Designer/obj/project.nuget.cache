@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YWh3aVgKlPI=",
+  "dgSpecHash": "wcz/IPhnU2I=",
   "success": true,
-  "projectFilePath": "c:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj",
+  "projectFilePath": "C:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\julia\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "C:\\Users\\julia\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
