@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PermaAccesser.Designer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5c42e04f60193e65483e23c0696d3e6556bdb52")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2db15e823958b0aecacd2293a0e95d553238332")]
 [assembly: System.Reflection.AssemblyProductAttribute("PermaAccesser.Designer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PermaAccesser.Designer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

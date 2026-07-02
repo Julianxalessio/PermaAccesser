@@ -229,11 +229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj",
+      "projectUniqueName": "I:\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj",
       "projectName": "PermaAccesser.Designer",
-      "projectPath": "C:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj",
+      "projectPath": "I:\\CodingProjects\\PS1\\PermaAccesser\\Designer\\PermaAccesser.Designer.csproj",
       "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\julia\\Desktop\\CodingProjects\\PS1\\PermaAccesser\\Designer\\obj\\",
+      "outputPath": "I:\\CodingProjects\\PS1\\PermaAccesser\\Designer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
